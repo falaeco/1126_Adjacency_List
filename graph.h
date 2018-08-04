@@ -8,12 +8,25 @@
 #include "linked_list.h"
 
 class graph {
-    public:
-        int num_vertices;
+    private:
+        int num_vertices; // order
+        int num_edges; // size
+
         // an array of linked_lists to hold vertices
         std::vector<linked_list*> vertices_list;
+    public:
         graph(int n);
         ~graph();
+        
+        /*** Access methods ***/
+        int get_order();
+        int get_size();
+
+        /*** Manipulation methods ***/
+        void add_edge(int u, int v);
+
+        void print_graph();
+
 };
 
 #endif // GRAPH_H_

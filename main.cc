@@ -6,13 +6,12 @@
 int main (int argc, const char* argv[]) {
     std::cout << "Hello World!\n";
     graph* G = new graph(5);
-    for (int i = 0; i < 5; i++) {
-        if (G->vertices_list[i]->is_empty()) {
-            std::cout << "list is empty\n";
-        }
-    }
+    std::cout << G->get_order() << std::endl;
+    std::cout << G->get_size() << std::endl;
 
-   delete G;
-   G = nullptr;
+    G->add_edge(0, 1);
+    G->add_edge(2, 4);
+    G->print_graph();
+
    return 0;
 }
