@@ -35,6 +35,10 @@ int graph::get_size() {
     return this->num_vertices; 
 }
 
+bool graph::is_empty() {
+    return (this->get_order() == 0 ? true : false);
+}
+
 // inserts a new edge joining u to v, 
 // i.e. u is added to the adjacency List of v, 
 // and v to the adjacency List of u
@@ -43,6 +47,8 @@ void graph::add_edge(int u, int v) {
     this->vertices_list[u]->append(v);
     // adjacenecy list of v is empty
     this->vertices_list[v]->append(u);
+    // increment order
+    num_edges++;
     return;
 }
 

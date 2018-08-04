@@ -22,6 +22,8 @@ class graph {
         int get_order();
         int get_size();
 
+        bool is_empty();
+
         /*** Manipulation methods ***/
         void add_edge(int u, int v);
 

@@ -13,5 +13,11 @@ int main (int argc, const char* argv[]) {
     G->add_edge(2, 4);
     G->print_graph();
 
+    if(G->is_empty()) {
+        std::cout << "Graph is empty\n";
+    } else {
+        std::cout << "Graph has " << G->get_order() << " edges\n";
+    }
+
    return 0;
 }
