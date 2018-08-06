@@ -9,15 +9,15 @@ int main (int argc, const char* argv[]) {
     std::cout << G->get_order() << std::endl;
     std::cout << G->get_size() << std::endl;
 
+    std::cout << "Adding edges: \n";
     G->add_edge(0, 1);
     G->add_edge(2, 4);
     G->print_graph();
-
-    if(G->is_empty()) {
-        std::cout << "Graph is empty\n";
-    } else {
-        std::cout << "Graph has " << G->get_order() << " edges\n";
-    }
+    std::cout << "Removing edges: \n";
+    G->remove_edge(0, 1);
+    G->print_graph();
+    G->remove_edge(2,4);
+    G->print_graph();
 
    return 0;
 }

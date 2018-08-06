@@ -26,6 +26,7 @@ class graph {
 
         /*** Manipulation methods ***/
         void add_edge(int u, int v);
+        void remove_edge(int u, int v);
 
         void print_graph();
 

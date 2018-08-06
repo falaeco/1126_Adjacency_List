@@ -48,11 +48,30 @@ void graph::add_edge(int u, int v) {
     // adjacenecy list of v is empty
     this->vertices_list[v]->append(u);
     // increment order
-    num_edges++;
+    this->num_edges++;
+    return;
+}
+
+// removes an edge
+void graph::remove_edge(int u, int v) {
+    // Return if graph is empty
+    if (this->vertices_list.empty()) return;
+    // Remove specified edge
+    this->vertices_list[u]->remove(v);
+    this->vertices_list[v]->remove(u);
+
+    this->num_edges--;
     return;
 }
 
 void graph::print_graph() {
+    // Case 1: Graph is empty
+    if (this->is_empty()) {
+        std::cout << "Graph is empty.\n";
+        return;
+    }
+
+    // Case 2: Graph is not empty
     for (int i = 0; i < this->vertices_list.size(); i++) {
         if (!this->vertices_list[i]->is_empty()) {
             this->vertices_list[i]->print_list();
