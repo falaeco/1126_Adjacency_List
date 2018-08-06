@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include <queue>
+#include <unordered_set>
 
 #include "linked_list.h"
 
@@ -28,6 +30,7 @@ class graph {
         void add_edge(int u, int v);
         void remove_edge(int u, int v);
 
+        void bfs_print();
         void print_graph();
 
 };

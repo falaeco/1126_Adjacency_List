@@ -64,6 +64,37 @@ void graph::remove_edge(int u, int v) {
     return;
 }
 
+void graph::bfs_print() {
+    std::unordered_set<int> visited_table;
+    std::queue<int> discovery_list;
+
+    // Search for starting node
+    for (int i = 0; i < this->vertices_list.size(); i++) {
+        if ( !(this->vertices_list[i]->is_empty()) ) {
+            discovery_list.push(i);
+            break;
+        }
+    }
+
+    // Traverse graph as long as queue is not empty
+    while (!discovery_list.empty()) {
+        int visited = discovery_list.front();
+        // Check if node has already been visited
+        if (visited_table.find(visited) == visited_table.end()) {
+            std::cout << visited << " ";
+            visited_table.insert(visited);
+            node* curr_node = this->vertices_list[visited]->get_head();
+            while (curr_node != nullptr) {
+                discovery_list.push(curr_node->data);
+                curr_node = curr_node->next;
+            }
+        }
+        discovery_list.pop();
+    }
+    std::cout << std::endl;
+    return;
+}
+
 void graph::print_graph() {
     // Case 1: Graph is empty
     if (this->is_empty()) {

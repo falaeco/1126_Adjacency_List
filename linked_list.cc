@@ -28,6 +28,12 @@ int linked_list::get_length() {
     return this->length;
 }
 
+// Retrieves the head of the list
+node* linked_list::get_head() {
+    if (this->head == nullptr) return nullptr; 
+    return this->head;
+}
+
 // Returns true if list is empty, else false
 bool linked_list::is_empty() {
     return (this->length == 0 ? true : false);
