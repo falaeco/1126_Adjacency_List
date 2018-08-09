@@ -14,7 +14,10 @@ int main (int argc, const char* argv[]) {
     G->add_edge(1, 3);
     G->add_edge(2, 4);
 
+    std::cout << "BFS: ";
     G->bfs_print();
+    std::cout << "DFS: ";
+    G->dfs_print();
 
     // G->print_graph();
     // std::cout << "Removing edges: \n";

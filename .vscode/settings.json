@@ -10,6 +10,16 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "algorithm": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp"
     }
 }
